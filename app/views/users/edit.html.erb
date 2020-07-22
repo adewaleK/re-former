@@ -1,0 +1,23 @@
+<h1>Edit user</h1>
+
+<%= form_for(@user) do |f|%>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h3>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :username, "Enter Your Username" %>
+  <%= f.text_field :username %><br />
+  <%= f.label :email, "Enter Your Email" %>
+  <%= f.email_field :email %><br />
+  <%= f.label :password, "ENter Your Password" %>
+  <%= f.password_field :password %><br />
+  <%= f.submit "Add User"%>
+<% end %>
+  
+ 
