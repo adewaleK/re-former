@@ -1,11 +1,12 @@
-<h1>Users</h1>
+<h1>New user</h1>
 
-<form action="/new.html.erb" method="get">
-<label for="usename">Username:</label>
-<input type="text" id="usename" name="usename"><br><br>
-<label for="email">Email:</label>
-<input type="text" id="email" name="email"><br><br>
-<label for="password">Password:</label>
-<input type="password" id="password" name="password"><br><br>
-<input type="submit" value="Submit">
-</form> 
+<form action="users_path" method="post" accept-charset="UTF-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="username">Username</label>
+  <input id="username" type="text" name="user[username]"><br />
+  <label for="email">Email</label>
+  <input id="email" type="email" name="user[email]" ><br />
+  <label for="password">Password</label>
+  <input id="password" type="password" name="user[password]"> <br />
+  <input type="submit" value="Signup">
+</form>
